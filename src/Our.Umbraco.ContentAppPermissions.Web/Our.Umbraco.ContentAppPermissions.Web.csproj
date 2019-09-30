@@ -419,7 +419,9 @@
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="config\logviewer.searches.config.js" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -459,7 +461,7 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Our.Umbraco.ContentAppPermissions.Core\Our.Umbraco.ContentAppPermissions.Core.csproj">
+    <ProjectReference Include="..\Our.Umbraco.ContentAppPermissions.Core\Our.Umbraco.ContentAppPermissions.Core.csproj">
       <Project>{a77fd355-f86f-4553-9e39-743e84d814bc}</Project>
       <Name>Our.Umbraco.ContentAppPermissions.Core</Name>
     </ProjectReference>
