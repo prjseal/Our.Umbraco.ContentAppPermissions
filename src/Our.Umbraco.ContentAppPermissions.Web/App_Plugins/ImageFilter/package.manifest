@@ -1,0 +1,20 @@
+{
+  "contentApps": [
+    {
+      "name": "Filter",
+      "alias": "imageFilter",
+      "weight": 1,
+      "icon": "icon-picture",
+      "view": "~/App_Plugins/ImageFilter/index.html",
+      "show": [
+        "+media/image"
+      ]
+    }
+  ],
+    "javascript": [
+        "~/App_Plugins/ImageFilter/js/imagefilter.controller.js"
+    ],
+    "css": [
+        "~/App_Plugins/ImageFilter/css/imagefilter.css"
+    ]
+}

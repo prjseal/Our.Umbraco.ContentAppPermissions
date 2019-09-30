@@ -1,0 +1,23 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Our.Umbraco.ContentAppPermissions</id>
+    <version>1.0.0</version>
+    <title>Our.Umbraco.ContentAppPermissions</title>
+    <authors>Paul Seal</authors>
+    <owners>Paul Seal</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/prjseal/Our.Umbraco.ContentAppPermissions</projectUrl>
+    <iconUrl>https://github.com/prjseal/Our.Umbraco.ContentAppPermissions/blob/master/images/logo.png?raw=true</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Manage who can see the content apps in your Umbraco site by changing an app setting in your web.config</description>
+    <releaseNotes>
+      - You can create a group for each content app and assign the permission to that group or you can allow an existing group to have permission to see the content app.
+    </releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>Umbraco Content App Permissions Manager</tags>
+  </metadata>
+  <files>
+    <file src="readme.txt" target="" />
+  </files>
+</package>

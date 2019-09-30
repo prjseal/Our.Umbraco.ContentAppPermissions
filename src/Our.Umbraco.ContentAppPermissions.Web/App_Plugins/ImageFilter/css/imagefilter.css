@@ -1,0 +1,122 @@
+﻿.image-filter__container {
+    width: 100%;
+    display: grid;
+    grid-template-areas: 'header header header' 'image image option';
+    grid-column-gap: 10px;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-row-gap: 15px;
+    padding: 10px;
+}
+
+    .image-filter__container img {
+        width: 100%;
+    }
+
+.image-filter__header {
+    grid-area: header;
+    padding: 5px;
+}
+
+.image-filter__image-store {
+    grid-area: image;
+    display: grid;
+    grid-template-areas: "original preview" "controls controls";
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+}
+
+    .image-filter__image-store .image__original {
+        grid-area: original;
+        padding: 5px;
+    }
+
+    .image-filter__image-store .image__preview {
+        grid-area: preview;
+        padding: 5px;
+    }
+
+    .image-filter__image-store .filter-controls {
+        grid-area: controls;
+        display: grid;
+        grid-template-areas: "empty text" "empty inputs";
+        grid-template-columns: 1fr 1fr;
+    }
+
+.control-text {
+    grid-area: text;
+    padding: 5px 10px;
+}
+
+.control-inputs {
+    grid-area: inputs;
+    padding: 5px 10px;
+}
+
+.image-filter__options {
+    grid-area: option;
+    margin-top: 64px;
+}
+
+.image-filter__container .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: rgb(65, 54, 89);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+    .image-filter__container .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #00aea2;
+        cursor: pointer;
+    }
+
+    .image-filter__container .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #00aea2;
+        cursor: pointer;
+    }
+
+.optional_control {
+    height: 30px;
+}
+
+.options_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#image-filter input[type="radio"], #image-filter input[type=checkbox] {
+    margin: 0;
+    height: 12px;
+    width: 12px;
+}
+
+#image-filter input[type=checkbox] {
+    margin: 4px;
+}
+
+#image-filter div.options_container input[type="radio"], #image-filter div.control-inputs input[type="radio"] {
+    margin-right: 4px;
+}
+
+.image-filter__container img[src$="rotate=90"], .image-filter__container img[src$="rotate=270"] {
+    max-width: none;
+    width: auto;
+    max-height: 389px;
+}
+
+#image-filter .image-filter__options button {
+    margin-bottom: 8px;
+    width: 100%;
+}

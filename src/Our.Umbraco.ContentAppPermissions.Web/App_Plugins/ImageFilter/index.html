@@ -1,0 +1,52 @@
+﻿<div class="umb-box" ng-controller="ImageFilter as vm">
+    <div class="umb-box-header">
+        <div class="umb-box-header-title">
+            Image Filter
+        </div>
+    </div>
+    <div id="image-filter" class="image-filter__container">
+        <div class="image-filter__header">
+            <div class="image-filter__intro">
+                <p>This content app allows you to apply filters and affects to your image, so you can preview what it looks like and even download the image by clicking on it.</p>
+            </div>
+        </div>
+        <div class="image-filter__image-store">
+            <div class="image__original">
+                <div class="optional_control">
+                    <label><input type="checkbox" value="true" ng-model="vm.showQueryString" no-dirty-check />Show query string for preview image?</label>
+                </div>
+                <h4>Original</h4>
+                <img src="{{vm.mediaUrl}}" />
+            </div>
+            <div class="image__preview">
+                <div class="optional_control">
+                    <span ng-if="vm.showQueryString">
+                        {{model.queryString}}
+                    </span>
+                </div>
+                    <h4>Preview</h4>
+                <div ng-if="model.selectedOption !== undefined && !vm.angular.equals(model.selectedOption,{})">
+                    <a href="{{vm.previewMediaUrl}}" title="Click to download this image" download="{{vm.fileName}}"><img src="{{vm.previewMediaUrl}}" /></a>
+                </div>
+                <div ng-if="model.selectedOption === undefined || vm.angular.equals(model.selectedOption,{})">
+                    <p>Please select an option on the right to enable the preview image.</p>
+                </div>
+            </div>
+            <div class="filter-controls" ng-include="model.selectedOption.PathToView">
+            </div>
+        </div>
+        <div class="image-filter__options">
+            <h4>Enabled options</h4>
+            <div ng-repeat="option in availableImageProcessorOptions track by $index">
+                <label><input type="radio" name="selectedOption" ng-value="option" ng-model="model.selectedOption" ng-change="vm.selectedProcessorChanged()" no-dirty-check />  {{option.Name}}</label>
+            </div>
+            <div ng-if="availableImageProcessorOptions.length == 0">
+                <p>To experiment with this content app, you need to enable the image processor options in the file /config/imageprocessor/processing.config.</p>
+                <p>The processor options which are currently supported are Brightness, Contrast, Filter, Flip and Rotate.</p>
+            </div>
+            <button ng-show="model.selectedOption !== undefined && !vm.angular.equals(model.selectedOption,{})" type="button" ng-click="createNewMedia(true)" class="btn umb-button__button btn-success umb-button--">Overwrite existing image</button>
+            <button ng-show="model.selectedOption !== undefined && !vm.angular.equals(model.selectedOption,{})" type="button" ng-click="createNewMedia(false)" class="btn umb-button__button btn-success umb-button--">Save as new image</button>
+            <button ng-show="model.selectedOption !== undefined && !vm.angular.equals(model.selectedOption,{})" type="button" ng-click="reset()" class="btn umb-button__button btn-danger umb-button--">Reset</button>
+        </div>
+    </div>
+</div>
