@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Our.Umbraco.ContentAppPermissions</id>
+    <id>Our.Umbraco.ContentAppPermissions.Core</id>
     <version>1.0.0</version>
-    <title>Our.Umbraco.ContentAppPermissions</title>
+    <title>Our.Umbraco.ContentAppPermissions.Core</title>
     <authors>Paul Seal</authors>
     <owners>Paul Seal</owners>
     <license type="expression">MIT</license>
